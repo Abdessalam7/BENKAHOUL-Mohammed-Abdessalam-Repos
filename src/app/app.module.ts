@@ -17,6 +17,7 @@ import { FixtureDetailPage } from '../pages/fixture-detail/fixture-detail';
 import { PremierLeagueApi } from '../providers/premier-league-api/premier-league-api';
 import { HttpModule } from '@angular/http';
 import { MatchdayPage } from '../pages/matchday/matchday';
+import { PlayersByTeamPage } from '../pages/players-by-team/players-by-team';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { MatchdayPage } from '../pages/matchday/matchday';
     GoalsPage,
     FixturesPage,
     FixtureDetailPage,
-    MatchdayPage
+    MatchdayPage,
+    PlayersByTeamPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ import { MatchdayPage } from '../pages/matchday/matchday';
     GoalsPage,
     FixturesPage,
     FixtureDetailPage,
-    MatchdayPage
+    MatchdayPage,
+    PlayersByTeamPage
   ],
   providers: [
     StatusBar,

@@ -7,7 +7,7 @@
 
 <ion-content padding>
 
-  Select your player's team
-  <button ion-button *ngFor="let club of clubs" ion-button block color="color3" (click)="gotoPlayers($event, club)">{{club.name}}</button>
+  All Premier league players :
+  <button ion-button size="small" *ngFor="let player of players" ion-button block color="color3" (click)="gotoPlayers($event, club)">{{player.first_name}} {{player.last_name}}</button>
 
 </ion-content>

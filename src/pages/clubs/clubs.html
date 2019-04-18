@@ -12,4 +12,5 @@
 
 <ion-content padding>
 
+<button ion-button size="small" *ngFor="let club of clubs" ion-button block color="color2" (click)="gotoClubsDetails($event, club)">{{club.name}}</button>
 </ion-content>

@@ -9,7 +9,10 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ClubsDetailPage {
 
+  clubdetails:any
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.clubdetails = this.navParams.data;
+    console.log('nav param', this.navParams);
   }
 
   ionViewDidLoad() {

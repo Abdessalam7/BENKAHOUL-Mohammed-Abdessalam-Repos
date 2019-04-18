@@ -14,21 +14,21 @@ export class PlayersPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public bplApi: PremierLeagueApi, public loadcontroler : LoadingController) {
   }
-  public clubs:any;
+  public players:any;
 
   ionViewDidLoad(){
     let loader = this.loadcontroler.create({
       content: 'Players lists by club'
     });
     loader.present().then(() => {
-      this.bplApi.getClubs().then(data => {
-        this.clubs=data;
+      this.bplApi.getPlayers().then(data => {
+        this.players=data;
         loader.dismiss();
       });
     });
    
   }
-  gotoPlayersDetails($event, team){
+    gotoPlayers($event, team){
     this.navCtrl.push(PlayersByTeamPage, team);
     console.log(team.fixture_code);
   }

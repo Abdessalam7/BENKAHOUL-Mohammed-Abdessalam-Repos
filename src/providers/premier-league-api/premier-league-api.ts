@@ -14,9 +14,12 @@ export class PremierLeagueApi {
     })
   }
 
-  // getPlayers(){
 
-  // }
+  getPlayers(){
+    return new Promise(resolve => {
+      this.http.get(`${this.baseUrl}/players.json`).subscribe (res => resolve(res.json()));
+    })
+  }
 
   getClubs(){
     return new Promise(resolve => {
