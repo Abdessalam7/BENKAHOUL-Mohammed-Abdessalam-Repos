@@ -7,7 +7,6 @@
 <ion-header>
   <ion-navbar color="color2">
       <ion-col width-50 center>
-          <ion-back-button defaultHref="home"></ion-back-button>
           <ion-title color="primary">BPL Home Page</ion-title>
         </ion-col>
     
@@ -19,18 +18,7 @@
 <ion-label color="color4">Premier League Season 2018-2019</ion-label>
 <button ion-button expand="block" ion-button full (click)="gotoMatchDay()" color="color1"> Season Fixtures </button>
 <button ion-button expand="block" ion-button full (click)="gotoClubs()" color="color2"> Premier League Clubs </button>
-<button ion-button expand="block" ion-button full (click)="gotoPlayers()" color="color3"> Premier League Players </button>
+<button ion-button expand="block" ion-button full (click)="gotoPlayers($event, clubs)" color="color3"> Premier League Players </button>
 <button ion-button expand="block" ion-button full (click)="gotoStats()" color="color4"> Goals & Assists </button>
-<ion-row center>
-    <ion-col width-50 center>
-      <ion-label>
-        Information
-      </ion-label>
-    </ion-col>
-    <ion-col width-50 center>
-      <ion-label>
-        Testing
-      </ion-label>
-    </ion-col>
-  </ion-row>
+<ion-label *ngFor="let club of clubs">{{club.name}}</ion-label>
 </ion-content>

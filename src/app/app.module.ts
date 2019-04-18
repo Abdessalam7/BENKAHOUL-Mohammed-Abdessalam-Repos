@@ -18,6 +18,7 @@ import { PremierLeagueApi } from '../providers/premier-league-api/premier-league
 import { HttpModule } from '@angular/http';
 import { MatchdayPage } from '../pages/matchday/matchday';
 import { PlayersByTeamPage } from '../pages/players-by-team/players-by-team';
+import { SelectSearchableModule}  from 'ionic-select-searchable';
 
 
 @NgModule({
@@ -34,12 +35,14 @@ import { PlayersByTeamPage } from '../pages/players-by-team/players-by-team';
     FixturesPage,
     FixtureDetailPage,
     MatchdayPage,
-    PlayersByTeamPage
+    PlayersByTeamPage,
+    
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
+    SelectSearchableModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

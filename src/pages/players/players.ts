@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {  NavController, NavParams, LoadingController } from 'ionic-angular';
 import { PremierLeagueApi } from '../../providers/premier-league-api/premier-league-api';
+import { PlayersDetailPage } from '../players-detail/players-detail';
 import { PlayersByTeamPage } from '../players-by-team/players-by-team';
 
 
@@ -11,7 +12,9 @@ import { PlayersByTeamPage } from '../players-by-team/players-by-team';
 })
 export class PlayersPage {
 
+  public clubs: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public bplApi: PremierLeagueApi, public loadcontroler : LoadingController) {
+    this.clubs= this.navParams.data;
   }
   public players:any;
 

@@ -4,6 +4,7 @@ import { MatchdayPage } from '../matchday/matchday';
 import { PlayersPage } from '../players/players';
 import { GoalsPage } from '../goals/goals';
 import { ClubsPage } from '../clubs/clubs';
+import { PremierLeagueApi } from '../../providers/premier-league-api/premier-league-api';
 
 
 @IonicPage()
@@ -15,18 +16,20 @@ export class PremierLeagueWelcomePage {
 
   
 
-  constructor(public nav: NavController, public navParams: NavParams) {
+  constructor(public nav: NavController, public navParams: NavParams, public bplApi: PremierLeagueApi) {
   }
-
+ public clubs: any;
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PremierLeagueWelcomePage');
+    
+      this.bplApi.getClubs().then(data => ( this.clubs=data));
+
   }
   gotoMatchDay(){
     this.nav.push(MatchdayPage);
   }
 
-  gotoPlayers(){
-    this.nav.push(PlayersPage);
+  gotoPlayers($event, clubs){
+    this.nav.push(PlayersPage, clubs);
   }
   gotoStats(){
     this.nav.push(GoalsPage);

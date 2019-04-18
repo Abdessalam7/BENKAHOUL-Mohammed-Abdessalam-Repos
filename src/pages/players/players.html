@@ -7,7 +7,18 @@
 
 <ion-content padding>
 
-  All Premier league players :
-  <button ion-button size="small" *ngFor="let player of players" ion-button block color="color3" (click)="gotoPlayers($event, club)">{{player.first_name}} {{player.last_name}}</button>
+ 
+  <ion-label>All Premier league players :</ion-label>
+  
+  <ion-item>
+      <ion-label>Filter by Team</ion-label>
+      <ion-select [(ngModel)]="toppings" multiple="false" okText="Okay" cancelText="Dismiss">
+      <ion-option checked="true">Filter by Team</ion-option>
+      <ion-option *ngFor="let club of clubs" value="club.name">{{club.name}}</ion-option>
+    </ion-select>
+    </ion-item>
+  
+  <!-- <ion-item *ngFor="let club of clubs">{{club.name}}</ion-item> -->
+  <button ion-button size="small" *ngFor="let player of players" ion-button small color="color3" (click)="gotoPlayers($event, club)">{{player.first_name}} {{player.last_name}}</button>
 
 </ion-content>

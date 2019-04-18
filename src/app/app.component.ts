@@ -6,7 +6,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PremierLeagueWelcomePage } from '../pages/premier-league-welcome/premier-league-welcome';
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  
 })
 export class MyApp {
   rootPage:any = PremierLeagueWelcomePage;
