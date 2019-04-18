@@ -1,0 +1,13 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+Fixtures
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-label>Premier League Match Day {{matchdaynumber}}</ion-label>
+    
+    <button ion-button *ngFor="let fixture of fixtures" ion-button full (click)="gotoFixtureDetails($event, fixture)" color="color1">{{fixture.home_team_code}} vs {{fixture.away_team_code}}</button> 
+   
+</ion-content>

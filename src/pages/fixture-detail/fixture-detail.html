@@ -1,0 +1,29 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{fixture.fixture_code}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-label>Fixture Details :{{fixture.fixture_code}</ion-label>
+
+
+<ion-content padding>
+        <ion-row> <ion-col><ion-label class=".my-label">Date :</ion-label ></ion-col><ion-col><ion-label class=".my-label"><ion-badge color="color1">{{fixture.date}}</ion-badge></ion-label></ion-col></ion-row>
+        <ion-row> <ion-col><ion-label class=".my-label">Staidum :</ion-label></ion-col><ion-col><ion-label class=".my-label"><ion-badge color="color1"> {{fixture.venue}}</ion-badge></ion-label></ion-col></ion-row>
+        <ion-row> <ion-col><ion-label class=".my-label">Attendance :</ion-label></ion-col><ion-col><ion-label class=".my-label"><ion-badge color="color1">{{fixture.attendance}}</ion-badge></ion-label></ion-col></ion-row>
+        <ion-row> <ion-col><ion-label class=".my-label">Home Team :</ion-label></ion-col> <ion-col><ion-label class=".my-label"><ion-badge color="color2">{{fixture.home_team}}</ion-badge></ion-label> </ion-col></ion-row>
+        <ion-row> <ion-col><ion-label class=".my-label">Away Team :</ion-label></ion-col><ion-col><ion-label class=".my-label"><ion-badge color="color4">{{fixture.away_team}}</ion-badge></ion-label></ion-col></ion-row>
+        <ion-row> <ion-col><ion-label class=".my-label">Full time Score :</ion-label></ion-col><ion-col><ion-label class=".my-label"><ion-badge color="color2">{{fixture.home_team_code}}</ion-badge><ion-badge color="color3"> {{fixture.full_time_score}}</ion-badge><ion-badge color="color4"> {{fixture.away_team_code}}</ion-badge></ion-label></ion-col></ion-row>
+        <ion-row><ion-col><ion-label class=".my-label" *ngIf="fixture.home_team_goals!==0">Away Team Scorers:</ion-label></ion-col> <ion-list>
+            <ion-col>   <ion-item *ngFor="let homescorer of fixture.home_team_scorers">
+                   <ion-label class=".my-label"><ion-badge color="color2">{{homescorer}}</ion-badge></ion-label>
+                 </ion-item></ion-col>
+               </ion-list>
+         </ion-row>
+    <ion-row><ion-col><ion-label class=".my-label" *ngIf="fixture.away_team_goals!==0">Away Team Scorers:</ion-label></ion-col> <ion-list>
+       <ion-col>   <ion-item *ngFor="let awayscorer of fixture.away_team_scorers">
+              <ion-label class=".my-label"><ion-badge color="color4">{{awayscorer}}</ion-badge></ion-label>
+            </ion-item></ion-col>
+          </ion-list>
+    </ion-row>
+</ion-content>

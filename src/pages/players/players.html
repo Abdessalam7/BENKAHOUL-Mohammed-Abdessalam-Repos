@@ -1,0 +1,13 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Players</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  Select your player's team
+  <button ion-button *ngFor="let club of clubs" ion-button block color="color3" (click)="gotoPlayers($event, club)">{{club.name}}</button>
+
+</ion-content>

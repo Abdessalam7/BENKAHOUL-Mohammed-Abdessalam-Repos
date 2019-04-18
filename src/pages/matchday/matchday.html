@@ -1,0 +1,15 @@
+<!--
+  Generated template for the MatchdayPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>matchday</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <button *ngFor="let matchday of matchdays" ion-button full (click)="gotoMatchDayDetails($event, matchday)" color="color1">Match Day {{matchday}}</button> 
+</ion-content>
