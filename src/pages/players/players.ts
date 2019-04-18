@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {  NavController, NavParams, LoadingController } from 'ionic-angular';
 import { PremierLeagueApi } from '../../providers/premier-league-api/premier-league-api';
-import { PlayersDetailPage } from '../players-detail/players-detail';
 import { PlayersByTeamPage } from '../players-by-team/players-by-team';
 
 
