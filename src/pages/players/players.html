@@ -19,6 +19,6 @@
     </ion-item>
   
   <!-- <ion-item *ngFor="let club of clubs">{{club.name}}</ion-item> -->
-  <button ion-button size="small" *ngFor="let player of players" ion-button small color="color3" (click)="gotoPlayers($event, club)">{{player.first_name}} {{player.last_name}}</button>
+  <button ion-button size="small" *ngFor="let playerFirst of players" ion-button small color="color3" (click)="gotoPlayersFirstDetails($event, playerFirst)">{{playerFirst.first_name}} {{playerFirst.last_name}}</button>
 
 </ion-content>

@@ -6,12 +6,23 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>playersDetail</ion-title>
+    <ion-title>{{playerRecieved.first_name}} {{playerRecieved.last_name}} Stats this season so far</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-  <ion-label>Goals Scored : {{playerDetails.goals_scored}}</ion-label>
+  <ion-label>Goals Scored : {{playerRecieved.goals_scored}}</ion-label>
+  <ion-row> <ion-col><ion-label class=".my-label">Full Name :</ion-label ></ion-col><ion-col><ion-label class=".my-label"><ion-badge color="color2">{{playerRecieved.first_name}} {{playerRecieved.last_name}}</ion-badge></ion-label></ion-col></ion-row>
+  <ion-row> <ion-col><ion-label class=".my-label">Jersey Number:</ion-label></ion-col><ion-col><ion-label class=".my-label"><ion-badge color="color1"> {{playerRecieved.jersey_number}}</ion-badge></ion-label></ion-col></ion-row>
+  <ion-row> <ion-col><ion-label class=".my-label">Current Club :</ion-label></ion-col><ion-col><ion-label class=".my-label"><ion-badge color="color1">{{playerRecieved.current_club}}</ion-badge></ion-label> </ion-col></ion-row>
+  <ion-row> <ion-col><ion-label class=".my-label">Previous Club :</ion-label ></ion-col><ion-col><ion-label class=".my-label"><ion-badge color="color1">{{playerRecieved.previous_club}}</ion-badge></ion-label></ion-col></ion-row>
+  <ion-row> <ion-col><ion-label class=".my-label">Nationality :</ion-label></ion-col> <ion-col><ion-label class=".my-label"><ion-badge color="color2">{{playerRecieved.nationality}}</ion-badge></ion-label> </ion-col></ion-row>
+  <ion-row> <ion-col><ion-label class=".my-label">Position :</ion-label></ion-col><ion-col><ion-label class=".my-label"><ion-badge color="color1">{{playerRecieved.position}}</ion-badge></ion-label></ion-col></ion-row>
+  <ion-row> <ion-col><ion-label class=".my-label">Appearances :</ion-label></ion-col><ion-col><ion-label class=".my-label"><ion-badge color="color1">{{playerRecieved.appearances}}</ion-badge></ion-label></ion-col></ion-row>
+  <ion-row> <ion-col><ion-label class=".my-label">Substitute Appearances :</ion-label></ion-col><ion-col><ion-label class=".my-label"><ion-badge color="color3">{{playerRecieved.substitute_appearances}}</ion-badge></ion-label></ion-col></ion-row>
+  <ion-row> <ion-col><ion-label class=".my-label">Goals Scored :</ion-label></ion-col><ion-col><ion-label class=".my-label"><ion-badge color="color2">{{playerRecieved.goals_scored}}</ion-badge></ion-label></ion-col></ion-row>
+  <ion-row> <ion-col><ion-label class=".my-label">Assists :</ion-label></ion-col><ion-col><ion-label class=".my-label"><ion-badge color="color4">{{playerRecieved.assists_made}}</ion-badge></ion-label></ion-col></ion-row>
+  <ion-row> <ion-col><ion-label class=".my-label">Own Golas :</ion-label></ion-col><ion-col><ion-label class=".my-label"><ion-badge color="color3">{{playerRecieved.own_goals}}</ion-badge></ion-label></ion-col></ion-row>
 
 </ion-content>

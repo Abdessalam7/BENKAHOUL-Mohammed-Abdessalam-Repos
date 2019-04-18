@@ -40,4 +40,7 @@ export class PlayersPage {
     this.navCtrl.push(PlayersByTeamPage,this.club)
   }
 
+  gotoPlayersFirstDetails($event,player){
+    this.navCtrl.push(PlayersDetailPage, player)
+  }
 }

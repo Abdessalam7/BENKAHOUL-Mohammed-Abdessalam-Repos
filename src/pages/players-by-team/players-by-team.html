@@ -7,6 +7,6 @@
 
 <ion-content padding>
  <ion-label>Click for details</ion-label> 
-<button ion-button color="color2" *ngFor="let joueur of playerFiltred" (click)="goToPlayerDetails($event,joueur)">{{joueur.first_name}}</button>
+<button ion-button color="color2" *ngFor="let player of playerFiltred" (click)="goToPlayerDetails($event,player)">{{player.first_name}} {{player.last_name}}</button>
 
 </ion-content>

@@ -14,6 +14,7 @@ export class PlayersDetailPage {
   players:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public bplApi: PremierLeagueApi, public loadcontroler : LoadingController) {
   this.playerRecieved= this.navParams.data;
+  console.log(this.playerRecieved)
   }
 
   ionViewDidLoad(){

@@ -3,12 +3,6 @@ import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { PremierLeagueApi } from '../../providers/premier-league-api/premier-league-api';
 import { PlayersDetailPage } from '../players-detail/players-detail';
 
-/**
- * Generated class for the PlayersByTeamPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-players-by-team',
@@ -20,6 +14,7 @@ export class PlayersByTeamPage {
   public team:any;
   public players:any;
   public playerFiltred:any = [];
+
   constructor(public navCtrl: NavController, 
     public navParams: NavParams ,
     public loadcontroler : LoadingController,
@@ -39,7 +34,7 @@ export class PlayersByTeamPage {
        this.players.forEach(player => {
          if(player.current_club==this.team){
         this.playerFiltred.push(player);
-        console.log(player.first_name);
+       
          }
        });
        
@@ -49,7 +44,8 @@ export class PlayersByTeamPage {
     });
   }
 
-  goToPlayerDetails(player){
+  goToPlayerDetails($event,player){
     this.navCtrl.push(PlayersDetailPage, player);
+    console.log(player);
   }
 }
