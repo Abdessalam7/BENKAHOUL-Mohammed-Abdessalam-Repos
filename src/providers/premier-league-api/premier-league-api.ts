@@ -26,5 +26,6 @@ export class PremierLeagueApi {
       this.http.get(`${this.baseUrl}/clubs.json`).subscribe (res => resolve(res.json()));
     })
   }
+ 
 }
 

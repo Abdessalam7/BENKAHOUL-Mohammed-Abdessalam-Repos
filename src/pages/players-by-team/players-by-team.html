@@ -1,15 +1,12 @@
-<!--
-  Generated template for the PlayersByTeamPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
-    <ion-title>PlayersByTeam</ion-title>
+    <ion-title>{{team}} Players List</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-<ion-label>{{team.club_code}}</ion-label>
+ <ion-label>Click for details</ion-label> 
+<button ion-button color="color2" *ngFor="let joueur of playerFiltred" (click)="goToPlayerDetails($event,joueur)">{{joueur.first_name}}</button>
+
 </ion-content>

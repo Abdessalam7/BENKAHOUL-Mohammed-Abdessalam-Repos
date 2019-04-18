@@ -12,6 +12,7 @@ import { PlayersByTeamPage } from '../players-by-team/players-by-team';
 })
 export class PlayersPage {
 
+  public club:any;
   public clubs: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public bplApi: PremierLeagueApi, public loadcontroler : LoadingController) {
     this.clubs= this.navParams.data;
@@ -33,6 +34,10 @@ export class PlayersPage {
     gotoPlayers($event, team){
     this.navCtrl.push(PlayersByTeamPage, team);
     console.log(team.fixture_code);
+  }
+
+  optionsFn():void{
+    this.navCtrl.push(PlayersByTeamPage,this.club)
   }
 
 }
