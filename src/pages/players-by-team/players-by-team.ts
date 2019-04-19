@@ -46,6 +46,6 @@ export class PlayersByTeamPage {
 
   goToPlayerDetails($event,player){
     this.navCtrl.push(PlayersDetailPage, player);
-    console.log(player);
+    console.log(player.first_name);
   }
 }

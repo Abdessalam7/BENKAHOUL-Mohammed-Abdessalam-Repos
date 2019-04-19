@@ -1,19 +1,19 @@
 
 <ion-header>
-  <ion-navbar>
-    <ion-title>Players</ion-title>
+  <ion-navbar color="color2">
+    <ion-title>Premier League 2018-19 Players</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
  
-  <ion-label>All Premier league players :</ion-label>
+  <ion-label>All the Premier league teams' players :</ion-label>
   
   <ion-item>
-      <ion-label>Filter by Team</ion-label>
+      <ion-label color="color2">Filter by Team</ion-label>
     <ion-select [(ngModel)]="club" multiple="false" okText="Okay" cancelText="Dismiss" (ionChange)="optionsFn()" >
-      <ion-option *ngFor="let club of clubs" >{{club.name}}</ion-option>
+      <ion-option *ngFor="let club of clubs" color="color2">{{club.name}}</ion-option>
       <button ion-button size="small" *ngFor="let player of players" ion-button small color="color3" (click)="gotoPlayers($event, club)">{{player.first_name}} {{player.last_name}}</button>
     </ion-select>
     </ion-item>

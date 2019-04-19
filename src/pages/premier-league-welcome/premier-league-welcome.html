@@ -14,11 +14,31 @@
 </ion-header>
 
 <ion-content>
-
-<ion-label color="color4">Premier League Season 2018-2019</ion-label>
-<button ion-button expand="block" ion-button full (click)="gotoMatchDay()" color="color1"> Season Fixtures </button>
-<button ion-button expand="block" ion-button full (click)="gotoClubs()" color="color2"> Premier League Clubs </button>
-<button ion-button expand="block" ion-button full (click)="gotoPlayers($event, clubs)" color="color3"> Premier League Players </button>
-<button ion-button expand="block" ion-button full (click)="gotoStats()" color="color4"> Goals & Assists </button>
+    <ion-list>
+        <ion-item>
+          <ion-label>Premier League Season 2018-2019</ion-label>
+        </ion-item>
+        </ion-list>
+<button ion-button expand="block" ion-button full (click)="gotoMatchDay()" color="color1"> SEASON FIXTURES </button>
+<button ion-button expand="block" ion-button full (click)="gotoClubs()" color="color2"> PREMIER LEAGUE CLUBS </button>
+<button ion-button expand="block" ion-button full (click)="gotoPlayers($event, clubs)" color="color3"> PREMIER LEAGUE PLAYERS </button>
+<button ion-button expand="block" ion-button full (click)="gotoStats()" color="color4"> STATS </button>
 <!--<ion-label *ngFor="let club of clubs">{{club.name}}</ion-label>-->
+<ion-label>This application was developped by :</ion-label>
+
+<ion-list>
+   
+      <ion-label>&nbsp;Mohammed Abdessalam BENKAHOUL®</ion-label>
+    
+      <ion-label> &nbsp;IONIC Project</ion-label>
+   
+      <ion-label>Master's Degree -MIAGE-</ion-label>
+    
+      <ion-label>Paris Descartes Univeristy</ion-label>
+   
+      <ion-label>2018-2019</ion-label>
+   
+        <ion-label>abdessalembenkahoul@hotmail.fr</ion-label>
+      
+  </ion-list>
 </ion-content>

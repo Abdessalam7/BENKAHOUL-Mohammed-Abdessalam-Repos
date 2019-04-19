@@ -5,11 +5,31 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>assists</ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar color="color2">
+      <ion-title>Assists of the season so far</ion-title>
+    </ion-navbar>
+  </ion-header>
 
 <ion-content padding>
 
+    <ion-grid>
+        <ion-row color="color2">
+         
+          <ion-col>            FOR          </ion-col>
+          <ion-col>            BY          </ion-col>
+          <ion-col>            TO          </ion-col>
+          <ion-col>            (H) TEAM          </ion-col>
+          <ion-col>            (A) TEAM          </ion-col>
+          <ion-col>           MINUTE          </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let assist of assists">  
+        
+         <ion-col>{{assist.assist_provided_for}}</ion-col>
+         <ion-col>{{assist.assist_provider_name}}</ion-col>
+         <ion-col>{{assist.assist_provided_to_name}}</ion-col>
+         <ion-col>{{assist.home_team}}</ion-col>
+         <ion-col>{{assist.away_team}}</ion-col>
+         <ion-col>{{assist.assist_minute}}</ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

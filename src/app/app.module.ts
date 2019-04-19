@@ -19,6 +19,8 @@ import { HttpModule } from '@angular/http';
 import { MatchdayPage } from '../pages/matchday/matchday';
 import { PlayersByTeamPage } from '../pages/players-by-team/players-by-team';
 import { SelectSearchableModule}  from 'ionic-select-searchable';
+import { StatsPage } from '../pages/stats/stats';
+import { CleanSheetsPage } from '../pages/clean-sheets/clean-sheets';
 
 
 @NgModule({
@@ -31,11 +33,14 @@ import { SelectSearchableModule}  from 'ionic-select-searchable';
     PlayersPage,
     ClubsPage,
     ClubsDetailPage,
-    GoalsPage,
     FixturesPage,
     FixtureDetailPage,
     MatchdayPage,
     PlayersByTeamPage,
+    StatsPage,
+    GoalsPage,
+    AssistsPage,
+    CleanSheetsPage
     
   ],
   imports: [
@@ -58,7 +63,11 @@ import { SelectSearchableModule}  from 'ionic-select-searchable';
     FixturesPage,
     FixtureDetailPage,
     MatchdayPage,
-    PlayersByTeamPage
+    PlayersByTeamPage,
+    StatsPage,
+    GoalsPage,
+    AssistsPage,
+    CleanSheetsPage
   ],
   providers: [
     StatusBar,
