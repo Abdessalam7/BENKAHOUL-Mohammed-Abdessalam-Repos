@@ -37,11 +37,11 @@ https://github.com/NearHuscarl/FootballDataAPI
 
 ## 4 Les fonctionnalités de l'application : 
 
-### Acceuil :
+### 4.1 Acceuil :
 
 ![1](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/1.png)
 
-### Affichage des matchs / saison 2018-2019 :
+### 4.2 Affichage des matchs / saison 2018-2019 :
 * Affichage de la liste globale des matchs par journée.
 
 ![2](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/2.png)
@@ -55,7 +55,7 @@ https://github.com/NearHuscarl/FootballDataAPI
 ![4](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/4.png)
 
 
-###  Affichage de tout les clubs du champoinnat / saison 2018-2019 : 
+### 4.3 Affichage de tout les clubs du champoinnat / saison 2018-2019 : 
 
 * affichage de la liste globale des clubs.
 
@@ -68,7 +68,7 @@ https://github.com/NearHuscarl/FootballDataAPI
 ![7](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/7.png)
 
 
-###  Affichage des joueurs / saison 2018-2019 : 
+### 4.4 Affichage des joueurs / saison 2018-2019 : 
 
 * Affichage de la liste globale des joueurs.
 
@@ -87,7 +87,7 @@ https://github.com/NearHuscarl/FootballDataAPI
 ![11.1](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/11.1.png)
 
 
-###  Statistiques globales / saison 2018-2019  :
+### 4.5 Statistiques globales / saison 2018-2019  :
 
 ![12](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/12.png)
 
