@@ -37,45 +37,72 @@ https://github.com/NearHuscarl/FootballDataAPI
 
 ## 4 Les fonctionnalités de l'application : 
 
-#### Acceuil :
+### Acceuil :
+
 ![1](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/1.png)
 
-#### Affichage des matchs / saison 2018-2019 :
+### Affichage des matchs / saison 2018-2019 :
 * Affichage de la liste globale des matchs par journée.
+
 ![2](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/2.png)
+
 * Affichage des 10 matchs jouées pour chaque journée, en cliquant sur la journée voullue.
+
 ![3](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/3.png)
+
 * affiche des details de chaque match, en cliquant dessus (date, stade, nombre des supporteurs, adversaires, score final, buts marqués).
+
 ![4](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/4.png)
 
 
-####  Affichage de tout les clubs du champoinnat / saison 2018-2019 : 
+###  Affichage de tout les clubs du champoinnat / saison 2018-2019 : 
+
 * affichage de la liste globale des clubs.
+
 ![5](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/5.png)
+
 * affichage les détails de chaque club en cliquant dessus (nom, manager, stade, capacité du stade, nombre de matchs joués, points, classement, nombre de victoires, nombre de défaites, nombre de matchs nuls, nombre de buts marqués, nombre de buts encaissés, difference de buts, prochain match).
+
 ![6](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/6.png)
+
 ![7](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/7.png)
 
 
-####  Affichage des joueurs / saison 2018-2019 : 
+###  Affichage des joueurs / saison 2018-2019 : 
+
 * Affichage de la liste globale des joueurs.
+
 ![8](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/8.png)
+
 * Filtrage des joueurs par équipe, en séléctionnant le nom de l'équipe voullue dans le menue déroulant.
+
 ![9](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/9.png)
+
 ![10](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/10.png)
+
 ![11](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/11.png)
-* Affichage des détails de chaque joueur en cliquant dessus (nom, numéro du joueur sur le maillot, club actuel, ancien club. nationalité, position, nombre d'apparitions, nombre de remplacements, nombre de buts marqués, nombre de passes décisives, nombre de buts marqués contre le camps).
+
+* Affichage des détails de chaque joueur en cliquant dessus (nom, numéro du joueur sur le maillot, club actuel, ancien club,nationalité, position, nombre d'apparitions, nombre de remplacements, nombre de buts marqués, nombre de passes décisives, nombre de buts marqués contre le camps).
+
 ![11.1](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/11.1.png)
 
 
-####  Statistiques globales / saison 2018-2019  :
+###  Statistiques globales / saison 2018-2019  :
+
 ![12](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/12.png)
+
 * Affichage en detail de tout buts marqués de la saison (numero du but, l'équipe qui l'a marqué, buteur, équipes , minute du but).
+
 ![13](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/13.png)
+
 ![14](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/14.png)
+
 * Affichage des passes décisives (pour quelle équipe, par quel joueur, pour quel joueur'buteur', les 2 équipes, minute de la passe).
+
 ![15](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/15.png)
+
 * Affichage des clean sheets (club, nom du gardien, nombre des clean sheets, équipes adverses concernées).
+
 ![16](https://github.com/Abdessalam7/BENKAHOUL-Mohammed-Abdessalam-Repos/blob/master/AppScreenshots/16.png)
 
 
