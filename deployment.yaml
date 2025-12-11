@@ -89,3 +89,4 @@ spec:
       affinity:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+vault write auth/gitlab_ci_oidc/role/images-pysmoke-test-ci role_type="jwt" policies="images-pysmoke-test-ci" token_explicit_max_ttl=3600 bound_audiences='["https://vault-aud.echonet.net.intra"]' user_claim="user_email" bound_claims='{"project_path":"market-place/a101731/pysmoke"}'
