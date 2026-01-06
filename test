@@ -44,3 +44,19 @@ curl -sS \
   -X PUT \
   --data @/tmp/role.json \
   "$VAULT_ADDR/v1/auth/gitlab_ci_oidc/role/images-pysmoke-test-ci"
+
+
+# allow managing gitlab oidc roles
+path "auth/gitlab_ci_oidc/role/*" {
+  capabilities = ["create", "read", "update", "delete", "list"]
+}
+
+# (optionnel) allow reading auth mount config
+path "auth/gitlab_ci_oidc/config" {
+  capabilities = ["read"]
+}
+
+# (optionnel) allow listing auth methods
+path "sys/auth" {
+  capabilities = ["read", "list"]
+}
