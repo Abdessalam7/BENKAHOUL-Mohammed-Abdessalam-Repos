@@ -1,17 +1,22 @@
-debug-vars:
-  stage: build-and-push
-  tags: ["iks"]
-  rules:
-    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
-      when: always
-    - when: never
-  script:
-    - echo "BUILD_ENV=$BUILD_ENV"
-    - echo "IMAGE_NAME=$IMAGE_NAME"
-    - echo "IMAGE_TAG=$IMAGE_TAG"
-    - echo "VAULT_ROLE=$VAULT_ROLE"
-    - echo "CI_PROJECT_PATH=$CI_PROJECT_PATH"
-    - echo "CI_ENVIRONMENT_SLUG=$CI_ENVIRONMENT_SLUG"
-    - echo "DOCKER_AUTH_CONFIG length=${#DOCKER_AUTH_CONFIG}"
-    - echo "CI_REGISTRY=$CI_REGISTRY"
-    - echo "CI_REGISTRY_IMAGE=$CI_REGISTRY_IMAGE"
+{
+  "role_type": "jwt",
+  "user_claim": "user_email",
+
+  "bound_audiences": [
+    "https://vault-aud.echonet.net.intra"
+  ],
+
+  "bound_claims_type": "glob",
+  "bound_claims": {
+    "project_path": [
+      "market-place/a101731/*"
+    ]
+  },
+
+  "token_policies": [
+    "cosign-sign-verify"
+  ],
+
+  "token_explicit_max_ttl": 3600,
+  "token_type": "default"
+}
