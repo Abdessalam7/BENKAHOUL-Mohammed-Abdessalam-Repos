@@ -1,62 +1,17 @@
-vault write auth/gitlab_ci_oidc/role/images-pysmoke-test-ci role_type="jwt" user_claim="sub" bound_claims_type="glob" bound_claims=@/tmp/bound_claims.hcl token_policies="images-pysmoke-test-ci" token_ttl="1h" token_max_ttl="4h"
-cat > /tmp/role.json <<'EOF'
-{
-  "role_type": "jwt",
-  "user_claim": "sub",
-  "bound_claims_type": "glob",
-  "bound_claims": {
-    "project_path": "market-place/a101731/pysmoke-test"
-  },
-  "token_policies": ["images-pysmoke-test-ci"],
-  "token_ttl": "1h",
-  "token_max_ttl": "4h"
-}
-EOF
-
-
-
-curl -sS \
-  -H "X-Vault-Token: $VAULT_TOKEN" \
-  -H "X-Vault-Namespace: a101731" \
-  -H "Content-Type: application/json" \
-  -X PUT \
-  --data @/tmp/role.json \
-  "$VAULT_ADDR/v1/auth/gitlab_ci_oidc/role/images-pysmoke-test-ci"
-
-
-
-cat > /tmp/role.json <<'EOF'
-{
-  "role_type": "jwt",
-  "user_claim": "sub",
-  "bound_claims_type": "glob",
-  "bound_claims": "{\"project_path\":\"market-place/a101731/pysmoke-test\"}",
-  "token_policies": ["images-pysmoke-test-ci"],
-  "token_ttl": "1h",
-  "token_max_ttl": "4h"
-}
-EOF
-
-curl -sS \
-  -H "X-Vault-Token: $VAULT_TOKEN" \
-  -H "X-Vault-Namespace: a101731" \
-  -H "Content-Type: application/json" \
-  -X PUT \
-  --data @/tmp/role.json \
-  "$VAULT_ADDR/v1/auth/gitlab_ci_oidc/role/images-pysmoke-test-ci"
-
-
-# allow managing gitlab oidc roles
-path "auth/gitlab_ci_oidc/role/*" {
-  capabilities = ["create", "read", "update", "delete", "list"]
-}
-
-# (optionnel) allow reading auth mount config
-path "auth/gitlab_ci_oidc/config" {
-  capabilities = ["read"]
-}
-
-# (optionnel) allow listing auth methods
-path "sys/auth" {
-  capabilities = ["read", "list"]
-}
+debug-vars:
+  stage: build-and-push
+  tags: ["iks"]
+  rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
+      when: always
+    - when: never
+  script:
+    - echo "BUILD_ENV=$BUILD_ENV"
+    - echo "IMAGE_NAME=$IMAGE_NAME"
+    - echo "IMAGE_TAG=$IMAGE_TAG"
+    - echo "VAULT_ROLE=$VAULT_ROLE"
+    - echo "CI_PROJECT_PATH=$CI_PROJECT_PATH"
+    - echo "CI_ENVIRONMENT_SLUG=$CI_ENVIRONMENT_SLUG"
+    - echo "DOCKER_AUTH_CONFIG length=${#DOCKER_AUTH_CONFIG}"
+    - echo "CI_REGISTRY=$CI_REGISTRY"
+    - echo "CI_REGISTRY_IMAGE=$CI_REGISTRY_IMAGE"
