@@ -1,22 +1,13 @@
+cat > pysmoke-test-vault-terraform-ci.json <<'EOF'
 {
   "role_type": "jwt",
+  "bound_audiences": ["https://vault-aud.echonet.net.intra"],
   "user_claim": "user_email",
-
-  "bound_audiences": [
-    "https://vault-aud.echonet.net.intra"
-  ],
-
   "bound_claims_type": "glob",
   "bound_claims": {
-    "project_path": [
-      "market-place/a101731/*"
-    ]
+    "project_path": ["market-place/a101731/*"]
   },
-
-  "token_policies": [
-    "cosign-sign-verify"
-  ],
-
-  "token_explicit_max_ttl": 3600,
-  "token_type": "default"
+  "token_policies": ["pysmoke-test-vault-terraform-ci"],
+  "token_explicit_max_ttl": 3600
 }
+EOF
