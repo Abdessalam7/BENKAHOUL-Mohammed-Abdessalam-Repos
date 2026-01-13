@@ -11,3 +11,6 @@ cat > pysmoke-test-vault-terraform-ci.json <<'EOF'
   "token_explicit_max_ttl": 3600
 }
 EOF
+
+
+kubectl -n spark get events --sort-by=.metadata.creationTimestamp | tail -n 50
