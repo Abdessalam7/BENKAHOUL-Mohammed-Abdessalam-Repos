@@ -1,0 +1,8 @@
+def my_func():
+    my_var = "hello"
+    print(f"ma variable = {my_var}")
+
+PythonOperator(
+    task_id="print_var",
+    python_callable=my_func,
+)
