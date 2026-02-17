@@ -1,0 +1,12 @@
+script:
+  - echo "DEBUG: checking VAULT_ID_TOKEN presence"
+  - test -n "$VAULT_ID_TOKEN" || (echo "VAULT_ID_TOKEN is empty" && exit 1)
+  - echo "$VAULT_ID_TOKEN" | cut -d. -f1 | head -c 20; echo
+  - echo "DEBUG: trying vault login"
+  - unset VAULT_TOKEN
+  - rm -f ~/.vault-token
+  - vault write -namespace="ap101731" -field=token \
+      auth/${VAULT_AUTH}/login \
+      role=pysmoke-helm-ci \
+      jwt="${VAULT_ID_TOKEN}" \
+      token_ttl=1m > ~/.vault-token
