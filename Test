@@ -1,7 +1,4 @@
-# 1. Sauvegarder le JSON dans un fichier d'abord
-airflow connections get ssh_conn -o json > /tmp/conn.json
-
-# 2. Extraire la clé
+# 1. Extraire la clé privée
 python3 -c "
 import json
 with open('/tmp/conn.json') as f:
@@ -12,6 +9,16 @@ with open('/tmp/vsi_key', 'w') as f:
 print('OK')
 "
 
-# 3. Vérifier
+# 2. Permissions
 chmod 600 /tmp/vsi_key
+
+# 3. Vérifier que la clé est bien écrite
 head -2 /tmp/vsi_key
+
+# 4. Tester SSH
+ssh -vvv \
+  -i /tmp/vsi_key \
+  -o StrictHostKeyChecking=no \
+  -p 22 \
+  datahub_dz@10.228.207.21 \
+  "echo 'Connexion VSI OK'"
