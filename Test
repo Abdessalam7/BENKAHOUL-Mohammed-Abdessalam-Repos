@@ -1,11 +1,17 @@
-airflow connections get ssh_conn -o json | python3 -c "
-import json, sys
-data = json.load(sys.stdin)
+# 1. Sauvegarder le JSON dans un fichier d'abord
+airflow connections get ssh_conn -o json > /tmp/conn.json
+
+# 2. Extraire la clé
+python3 -c "
+import json
+with open('/tmp/conn.json') as f:
+    data = json.load(f)
 extra = data[0]['extra_dejson']
-# extra_dejson est déjà un dict, pas besoin de json.loads()
-if isinstance(extra, str):
-    extra = json.loads(extra)
 with open('/tmp/vsi_key', 'w') as f:
     f.write(extra['private_key'])
 print('OK')
 "
+
+# 3. Vérifier
+chmod 600 /tmp/vsi_key
+head -2 /tmp/vsi_key
