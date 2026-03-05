@@ -1,8 +1,12 @@
 python3 << 'EOF'
 import paramiko
+import io
 
-# Chargeur générique qui détecte automatiquement le type de clé
-key = paramiko.pkey.PKey.from_private_key_file('/tmp/vsi_key')
+with open('/tmp/vsi_key', 'r') as f:
+    key_content = f.read()
+
+# API correcte pour 3.x
+key = paramiko.pkey.PKey.from_private_key(io.StringIO(key_content))
 
 client = paramiko.SSHClient()
 client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -16,7 +20,7 @@ client.connect(
     timeout=10
 )
 
-print("Connecté ! Exécution de la commande...")
+print("Connecté !")
 stdin, stdout, stderr = client.exec_command('echo "Connexion VSI OK"')
 print("STDOUT:", stdout.read().decode())
 print("STDERR:", stderr.read().decode())
