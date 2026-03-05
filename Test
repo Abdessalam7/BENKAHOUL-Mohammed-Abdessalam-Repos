@@ -1,24 +1,25 @@
-# 1. Extraire la clé privée
-python3 -c "
-import json
-with open('/tmp/conn.json') as f:
-    data = json.load(f)
-extra = data[0]['extra_dejson']
-with open('/tmp/vsi_key', 'w') as f:
-    f.write(extra['private_key'])
-print('OK')
-"
+python3 << 'EOF'
+import paramiko
 
-# 2. Permissions
-chmod 600 /tmp/vsi_key
+key = paramiko.RSAKey.from_private_key_file('/tmp/vsi_key')
 
-# 3. Vérifier que la clé est bien écrite
-head -2 /tmp/vsi_key
+client = paramiko.SSHClient()
+client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
-# 4. Tester SSH
-ssh -vvv \
-  -i /tmp/vsi_key \
-  -o StrictHostKeyChecking=no \
-  -p 22 \
-  datahub_dz@10.228.207.21 \
-  "echo 'Connexion VSI OK'"
+print("Connexion en cours...")
+client.connect(
+    hostname='10.228.207.21',
+    port=22,
+    username='datahub_dz',
+    pkey=key,
+    timeout=10
+)
+
+print("Connecté ! Exécution de la commande...")
+stdin, stdout, stderr = client.exec_command('echo "Connexion VSI OK"')
+print("STDOUT:", stdout.read().decode())
+print("STDERR:", stderr.read().decode())
+
+client.close()
+print("Done.")
+EOF
