@@ -1,7 +1,8 @@
 python3 << 'EOF'
 import paramiko
 
-key = paramiko.RSAKey.from_private_key_file('/tmp/vsi_key')
+# Chargeur générique qui détecte automatiquement le type de clé
+key = paramiko.pkey.PKey.from_private_key_file('/tmp/vsi_key')
 
 client = paramiko.SSHClient()
 client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
