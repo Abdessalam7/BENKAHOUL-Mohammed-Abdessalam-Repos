@@ -1,0 +1,14 @@
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+export default defineConfig({
+  base: "/user/h85731/proxy/5173/",
+  plugins: [react()],
+  server: {
+    host: "0.0.0.0",
+    allowedHosts: ["codehub-ap43783-hprd-b462acda.data.cloud.net.intra"],
+    proxy: {
+      "/api": "http://localhost:8081",
+    },
+  },
+});
